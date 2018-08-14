@@ -22,7 +22,7 @@ var app = new Vue({
 
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./service-worker.js').then(function(registration) {
+  navigator.serviceWorker.register('/addressbook/service-worker.js', {scope: '/addressbook/'}).then(function(registration) {
     console.log('Service Worker Registered. Scope is: ' + registration.scope);
 
     registration.pushManager.getSubscription().then(function(sub){
